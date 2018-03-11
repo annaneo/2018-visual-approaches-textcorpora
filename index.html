@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title >Visual Approaches to the Presentation and Analysis of Text Corpora: Case Studies on Digital Collections of Medieval and Early Modern Sources</title>
+
+    <!-- meta information -->
+    <meta name="author" content="Anna Neovesky" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- favicons -->
+    <link rel="shortcut icon" href="resources/img/favicon.png" />
+    <link rel="apple-touch-icon" href="resources/img/apple-touch-icon.png" />
+
+    <!-- CSS reset and grid -->
+    <link href="vendor/normalize/normalize-4.1.1.css" rel="stylesheet" />
+    <link href="vendor/skeleton/skeleton-2.0.4.css" rel="stylesheet" />
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,600italic,400italic,700italic,800,800italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+
+    <!-- styles for included libraries -->
+
+    <!-- chartist -->
+    <link rel="stylesheet" href="vendor/chartist/chartist.min-0.9.7.css" />
+
+    <!-- unite gallery -->
+    <link rel="stylesheet" href="vendor/unitegallery/css/unite-gallery.css" type="text/css" />
+
+    <!-- codemirror -->
+    <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" />
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/styles/default.css" />
+    <link rel="stylesheet" href="resources/css/hljs.linenumbering.css" />
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="vendor/swiper/swiper.min.css" />
+
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup-1.1.0.css" />
+
+    <!-- standard presentation styles -->
+    <link href="resources/css/style.css" rel="stylesheet" />
+
+    <!-- custom presentation styles -->
+    <link href="resources/css/custom.css" rel="stylesheet" />
+
+    <!-- js needed in head -->
+
+    <!-- greuler -->
+    <script src="vendor/d3/d3-3.5.6.js"></script>
+    <script src="vendor/cola/cola.v3.min.js"></script>
+    <script src="vendor/greuler/greuler-0.5.5.min.js"></script>
+
+    <!-- html5 dataset shim for IE -->
+    <script src="vendor/impress/html5-dataset.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <div class="fallback-message">
+        <p>
+            Your browser <strong>doesn't support the features required</strong> by impress.mod.js,
+            so you are presented with a simplified version of this presentation.
+        </p>
+        <p>
+            For the best experience please use the latest <strong>Chrome</strong>, <strong>Safari</strong>
+            or <strong>Firefox</strong> browser.
+        </p>
+    </div>
+
+    <div id="impress">
+
+        <div class="step">
+            <h5 class="down-25">14th March 2018| <a href="https://www.cerl.org/services/seminars/powerpoint_presentations_zurich">CERL Seminar "Visual Approaches to Cultural Heritage"</a></h5>
+
+            <h1 class="down-50" style="font-size:7.0rem">Visual Approaches to the Presentation and Analysis of Text Corpora</h1>
+
+            <h2 class="red" style="font-size:4.0rem">Case Studies on Digital Collections of Medieval and Early Modern Sources</h2>
+
+            <h5 class="down-50">
+                Slides:
+                <a href="https://annaneo.github.io/2018-visual-approaches-textcorpora" title="View the presentation online">
+                    https://annaneo.github.io/2018-visual-approaches-textcorpora
+                </a>
+            </h5>
+
+            <h5>
+                <strong><a href="https://orcid.org/0000-0002-0627-8199">Anna Neovesky, Digital Academy, Academy of Sciences and Literature | Mainz</a></strong><br/>
+                <img src="resources/img/Twitter_bird_logo_2012.svg" alt="Twitter" class="twitter-icon" />
+                <a href="https://twitter.com/digicademy" title="Digital Academy on Twitter">@digicademy</a> |
+                <img src="resources/img/Octicons-mark-github.svg" alt="Twitter" class="gh-icon" />
+                <a href="https://github.com/digicademy/" title="Digital Academy on GitHub">digicademy</a> |
+                <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>
+            </h5>
+        </div>
+
+        <div class="step">
+            <h2>Overview</h2>
+            <ol class="line-height-one-five">
+                <li>
+                    Research projects at the<br/> Academy of Sciences and Literature | Mainz
+                </li>
+                <li>
+                    Visualisations: What? Which purpose? For whom?
+                </li>
+                <li>
+                    Spatial Visualisations of Medieval and Early Modern Inscriptions
+                </li>
+                <li>
+                    Visualising Relations in Regestae of Medieval Charters
+                </li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h2>Research projects at the Academy of Sciences and Literature | Mainz</h2>
+            <h4 class="red up-25">Digital Editions, Digital Cultural Collections, Dictionaries...</h4>
+            <div id="researchdata" style="display:none;">
+                <a href="http://www.regesta-imperii.de/id/0797-03-31_1_0_1_1_0_920_336">
+                    <img alt="Medieval History: Regesta Imperii"
+                         src="resources/img/forschungsdaten_thumbs_ri.png"
+                         data-image="resources/img/forschungsdaten_ri.jpg"
+                         data-description="Gemeinfrei. Wikimedia Commons. https://upload.wikimedia.org/wikipedia/commons/b/b1/Dipl%C3%B4me_de_Charlemagne_donn%C3%A9_le_31_mars_797._-_Archives_Nationales_-_AE-II-42.jpg"
+                         style="display:none">
+                </a>
+
+                <a href="http://id.corpusvitrearum.de/images/3515">
+                    <img alt="Art History: Medieval Stained Glass"
+                         src="resources/img/forschungsdaten_thumbs_cvma.png"
+                         data-image="resources/img/forschungsdaten_cvma.jpg"
+                         data-description="Rüdiger Tonojan, CVMA Deutschland/Freiburg, CC-BY 4.0 (http://creativecommons.org/licenses/by/4.0/)"
+                         style="display:none">
+                </a>
+
+                <a href="http://nbn-resolving.de/urn:nbn:de:0238-di002mz00k0001208">
+                    <img alt="Epigraphy: German Inscriptions"
+                         src="resources/img/forschungsdaten_thumbs_inschriften.png"
+                         data-image="resources/img/forschungsdaten_inschriften.jpg"
+                         data-description="Von Benutzer:Moguntiner - Dieses Foto wurde im Mai 2005 von Benutzer:Moguntiner aufgenommen und ist eine verbesserte Version des Bildes vom 21.03.05, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=23986757"
+                         style="display:none">
+                </a>
+
+                <a href="http://www.controversia-et-confessio.de/cc-digital.html">
+                    <img alt="Theology: Post-Reformation Discourses"
+                         src="resources/img/forschungsdaten_thumbs_controversia.png"
+                         data-image="resources/img/forschungsdaten_controversia.jpg"
+                         data-description="Gemeinfrei. Wikimedia Commons. Eber-Epitaph in der Stadtkirche Wittenberg, gemalt von Lucas Cranach d. J. https://commons.wikimedia.org/wiki/File:Weinberg-WB-1569.jpg"
+                         style="display:none">
+                </a>
+
+                <a href="http://www.gluck-gesamtausgabe.de/id/1-38-00-0">
+                    <img alt="Musicology: Gluck's Complete Works"
+                         src="resources/img/forschungsdaten_thumbs_gluck.png"
+                         data-image="resources/img/forschungsdaten_gluck.jpg"
+                         data-description="Gemeinfrei. Wikimedia Commons. https://de.wikipedia.org/wiki/Christoph_Willibald_Gluck#/media/File:Christoph_Willibald_Gluck_-_Misero_e_che_far%C3%B2_from_Alceste._%28BL_Zweig_MS_34_f._1r%29.jpg"
+                         style="display:none">
+                </a>
+
+                <a href="http://www.namenforschung.net/id/name/30/1">
+                    <img alt="Linguistics: Onomastics portal"
+                         src="resources/img/forschungsdaten_thumbs_dfd.png"
+                         data-image="resources/img/forschungsdaten_dfd.jpg"
+                         data-description="Namenforschung.Net"
+                         style="display:none">
+                </a>
+            </div>
+        </div>
+
+
+        <div class="step">
+            <h2>Visualisation: Why? What? For whom?</h2>
+            <h3 class="red up-25">Levels of and reasons for visualisation in large textual collections</h3>
+            <div class="row">
+                <div class="six columns">
+                    <p>What can be visualised?</p>
+                    <ul class="small down-50">
+                        <li>Material</li>
+                        <li>Text (ngrams)</li>
+                        <li>Time</li>
+                        <li>Space (geographic location)</li>
+                        <li>Spatial Context</li>
+                    </ul>
+                </div>
+                <div class="six columns substep">
+                    <p>Purpose?</p>
+                    <ul class="small down-50">
+                        <li>Overview, interface</li>
+                        <li>Spatial contextualisation</li>
+                        <li>Visualisation of quantitative analysis</li>
+                        <li>Reserach tool</li>
+                    </ul>
+                </div>
+                <div class="six columns substep">
+                    <p>Target groups?</p>
+                    <ul class="small down-50">
+                        <li>Interested public</li>
+                        <li>Researchers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="step">
+            <h2>Spatial Visualisations of Inscriptions</h2>
+            <h3 class="red up-25">Virtual Tours and Tool for Spatial Annotation</h3>
+            <row>
+                <div class="six columns down-50">
+                    <a href="resources/img/hildesheim3d.png">
+                        <img src="resources/img/hildesheim3d.png" alt="Screenshot" title="Virtual Tour through St. Michaelis" width="100%" />
+                    </a>
+                </div>
+                <div class="six columns">
+                    <a href="resources/img/ibr_langhaus.png">
+                        <img src="resources/img/ibr_langhaus.png" alt="Screenshot" title="IBR" width="100%" />
+                    </a>
+                </div>
+            </row>
+        </div>
+
+
+        <div class="step">
+            <h2>
+                The research project "The German Inscriptions of Medieval and Early Modern Times"
+            </h2>
+            <row>
+                <div class="six columns">
+                    <ul class="line-height-one-two-five down-50">
+                        <li>Interacademic project</li>
+                        <li>81 published volumes</li>
+                        <li>German Inscriptions Online: 42 volumes with 17,000 objects and more than 18,000 illustrations</li>
+                    </ul>
+                </div>
+                <div class="five columns mfp-lightbox">
+                    <a>
+                        <img src="resources/img/di-publications.png" alt="Screenshot" title="DI Publciation" />
+                    </a>
+                    <a>
+                        <img src="resources/img/dio_screenshot.png" alt="Screenshot" title="DIO web platform"  />
+                    </a>
+                </div>
+            </row>
+
+        </div>
+
+        <div class="step">
+            <h2>
+                Virtual Tour to Inscriptions
+            </h2>
+            <h3 class="red up-25">St. Michaelis in Hildesheim</h3>
+            <div class="eight columns mfp-lightbox">
+                <a href="resources/img/hildesheim3d.png">
+                    <img src="resources/img/hildesheim3d.png" alt="Screenshot" title="Startseite von IBR" width="100%" />
+                </a>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>Inscriptions in their Spatial Context</h2>
+            <h3 class="red up-25">BMBF Project (2012-2015)</h3>
+            <div class="row mfp-lightbox">
+                <div class="six columns">
+                    <a href="resources/img/ibr.png">
+                        <img src="resources/img/ibr.png" alt="Screenshot" title="Startseite von IBR" width="100%" />
+                    </a>
+                    <p>
+                        <a class="small" href="http://spatialhumanities.de/">http://spatialhumanities.de/</a>
+                    </p>
+                </div>
+                <div class="six columns mfp-lightbox">
+                    <a href="resources/img/ibr_tls.png" style="float: left; width: 50%;">
+                        <img src="resources/img/ibr_tls.png" alt="" title="" width="100%" />
+                    </a>
+                    <a href="resources/img/ibr_xtriples.png" style="float: left; width: 50%;">
+                        <img src="resources/img/ibr_xtriples.png" alt="" title="" width="100%" />
+                    </a>
+                    <ul class="even-left medium down-25" style="clear: both;">
+                        <li>Goal: provide new methods for the analysis of spatial data by connecting spatial data (terrestrical laser scans)
+                            with Verbindung von Raumdaten (terrestric laserscanning) with research data (RDF)
+                        </li>
+                        <li>
+                            Webbased tool to capture and semantically annotate spatial geometries
+                            in the point cloud (Generic Viewer)
+                        </li>
+                        <li>
+                            Webservice to harvest and extract semantic statements from XML-based reserach data(XTriples)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2 class="down-25">IBR Architecture</h2>
+            <h3 class="red up-25">Components</h3>
+            <div class="row mfp-lightbox">
+                <div class="ten columns">
+                    <a href="resources/img/ibr-architecture.jpg">
+                        <img src="resources/img/ibr-architecture.jpg" alt="" title="" width="616" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2 class="down-25">Generic Viewer</h2>
+            <h3 class="red up-25">Features</h3>
+            <div class="row mfp-lightbox">
+                <div class="four columns">
+                    <a href="resources/img/ibr_chor.png">
+                        <img src="resources/img/ibr_chor.png" alt="" title="" width="100%" />
+                    </a>
+                    <p class="medium">Orientation</p>
+                </div>
+                <div class="four columns">
+                    <a href="resources/img/ibr_langhaus.png">
+                        <img src="resources/img/ibr_langhaus.png" alt="" title="" width="100%" />
+                    </a>
+                    <p class="medium">Measuring</p>
+                </div>
+                <div class="four columns">
+                    <a href="resources/img/ibr_triple_composer.png">
+                        <img src="resources/img/ibr_triple_composer.png" alt="" title="" width="100%" />
+                    </a>
+                    <p class="medium">Interlinking</p>
+                </div>
+            </div>
+            <p class="down-50 medium">Generic Viewer:
+                <a href="http://oberwesel.spatialhumanities.de/viewer/">http://oberwesel.spatialhumanities.de/viewer/</a>
+            </p>
+        </div>
+
+        <div class="step">
+            <h2 class="down-25">Reference Study</h2>
+            <h3 class="red up-25">Liebfrauenkirche Oberwesel</h3>
+            <div class="row mfp-lightbox">
+                <div class="six columns">
+                    <p>Visibility of the building inscription</p>
+                    <a href="resources/img/kirchenraeume_2015_005.png">
+                        <img src="resources/img/kirchenraeume_2015_005.png" alt="" title="" width="100%" />
+                    </a>
+                </div>
+                <div class="six columns">
+                    <p>Petrus Lutern / Martha-Altar</p>
+                    <a href="resources/img/kirchenraeume_2015_006.png">
+                        <img src="resources/img/kirchenraeume_2015_006.png" alt="" title="" width="100%" />
+                    </a>
+                </div>
+            </div>
+            <p class="x-small">
+                <strong>Paper:</strong>
+                <a href="http://www.zfdg.de/sb001_015">
+                    Lange, Unold (2015): Semantisch angereicherte 3D-Messdaten von Kirchenräumen als Quellen
+                    für die geschichtswissenschaftliche Forschung, ZFDG 1 (2015), http://www.zfdg.de/sb001_015
+                </a>
+            </p>
+        </div>
+
+        <div class="step">
+            <h2>Regesta Imperii</h2>
+            <h3 class="red up-25">Visual analysis of relations and visual exploration of the corpus</h3>
+            <row>
+                <div class="six columns down-50 mfp-lightbox">
+                    <a href="resources/img/ri_visual-interface-full.png">
+                        <img src="resources/img/ri_visual-interface-full.png" alt="Screenshot" title="Virtual Tour through St. Michaelis" width="100%" />
+                    </a>
+                </div>
+                <div class="six columns down-50 mfp-lightbox">
+                    <a href="resources/img/ri-graph-citations.png">
+                        <img src="resources/img/ri-graph-citations.png" alt="Screenshot" title="IBR" width="100%" />
+                    </a>
+                </div>
+            </row>
+        </div>
+
+
+        <div class="step">
+            <div class="six columns">
+            <h2>Regesta Imperii</h2>
+            <h3 class="red up-25">The research project</h3>
+            <row>
+
+                    <ul>
+                        <li>Edition of charters of the Holy Roman Kings</li>
+                        <li>Over 180,000 sources are available online</li>
+                        <li>OPAC</li>
+                    </ul>
+                </div>
+                <div class="five columns mfp-lightbox">
+                    <a href="resources/img/ri-volumes.png">
+                        <img src="resources/img/ri-volumes.png"  title="Regesta Imperii volumes" width="100%"/>
+                    </a>
+                </div>
+            </row>
+        </div>
+
+
+        <div class="step">
+            <h2>Regesta Imperii</h2>
+            <h3 class="red up-25">Using graph databases</h3>
+            <row>
+                <div class="five columns">
+                    <ul>
+                        <li>Tool for visualisation and analysis</li>
+                        <li>Relations of registers</li>
+                        <li>Citation networks</li>
+                        <li>Modelling of variants</li>
+                        <li>Relations between persons</li>
+                        <li>Acts described in regestae</li>
+                    </ul>
+                </div>
+                <div class="seven columns mfp-lightbox">
+                    <a href="resources/img/ri-graph.png">
+                        <img src="resources/img/ri-graph.png"  title="Regesta Imperii Graph" width="100%"/>
+                    </a>
+                </div>
+            </row>
+        </div>
+
+
+        <div class="step">
+            <h2>Regesta Imperii</h2>
+            <h3 class="red up-25">Citation Networks</h3>
+            <row>
+                <div class="four columns mfp-lightbox ">
+                    <a href="resources/img/ri-regest-28-290.png.">
+                        <img src="resources/img/ri-regest-28-290.png" alt="" title="" width="100%" />
+                    </a>
+                    <p class="small">RI XIII H. 28 n. 290 secondary literature</p>
+                </div>
+                <div class="four columns  mfp-lightbox">
+                    <a href="resources/img/ri-opac.png">
+                        <img src="resources/img/ri-opac.png" alt="" title="" width="100%" />
+                    </a>
+                    <p class="small">RI OPAC</p>
+                </div>
+                <div class="four columns mfp-lightbox ">
+                    <a href="resources/img/ri-graph-citations.png">
+                        <img src="resources/img/ri-graph-citations.png" alt="" title="" width="100%" />
+                    </a>
+                    <p class="small">Secondary literature graph view</p>
+                </div>
+            </row>
+        </div>
+
+
+        <div class="step">
+            <h2>Interactive visual exploration of the Regesta Imperii </h2>
+            <h3 class="red up-25">In cooperation with the University of Stuttgart</h3>
+            <row>
+                <div class="six columns">
+                    <ul>
+                        <li>Motivation: Improve search and exploration possibilities for the data</li>
+                        <li>Web based exploratory interface</li>
+                        <li>Filters: timeline, places, registers, entities</li>
+                    </ul>
+                </div>
+                <div class="six columns">
+                    <a href="resources/img/ri_visual-interface-full.png">
+                        <img src="resources/img/ri_visual-interface-full.png" alt="" title="" width="100%" />
+                    </a>
+                </div>
+            </row>
+        </div>
+
+
+        <div class="step">
+            <h2>Conclusion</h2>
+            <row>
+            <div class="five columns">
+                <a href="resources/img/hildesheim3d.png">
+                    <img src="resources/img/hildesheim3d.png" alt="" title=""/>
+                </a>
+                <a href="resources/img/ibr_langhaus.png">
+                    <img src="resources/img/ibr_langhaus.png" alt="" title=""  />
+                </a>
+            </div>
+
+            <div class="five columns">
+                <a href="resources/img/ri-graph.png">
+                    <img src="resources/img/ri-graph.png" alt="" title=""  />
+                </a>
+                <a href="resources/img/ri_visual-interface-full.png">
+                    <img src="resources/img/ri_visual-interface-full.png" alt="" title="" />
+                </a>
+            </div>
+            </row>
+
+        </div>
+
+
+
+        <div class="step">
+
+            <h2>Links, Software, References</h2>
+
+            <h4>Links</h4>
+
+            <ul class="small">
+                <li>
+                    <a href="http://oberwesel.spatialhumanities.de">GenericViewer Demo</a>
+                </li>
+                <li>
+                    <a href="http://xtriples.spatialhumanities.de">XTriples Webservice</a>
+                </li>
+                <li>
+                    <a href="http://dhd2016.digitale-akademie.de/presentation/">Slides: Geisteswissenschaftliche Fachdaten im Semantic Web</a>
+                </li>
+            </ul>
+
+            <h4>Software</h4>
+
+            <ul class="small">
+                <li href="">virtualTour</li>
+            </ul>
+
+            <h4>Presentation</h4>
+            <ul class="small">
+                <li>
+                    <a href="https://github.com/">
+                        https://github.com/
+                    </a>
+                </li>
+                <li>
+                    License: <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>, Anna Neovesky
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- jquery -->
+    <script src="vendor/jquery/jquery-1.11.0.min.js"></script>
+
+    <!-- unite gallery -->
+    <script type="text/javascript" src="vendor/unitegallery/js/unitegallery.min.js"></script>
+    <script type="text/javascript" src="vendor/unitegallery/themes/tiles/ug-theme-tiles.js"></script>
+    <script type="text/javascript" src="resources/js/unite.gallery.js"></script>
+
+    <!-- chartist -->
+    <script src="vendor/chartist/chartist.min-0.9.7.js"></script>
+    <script src="resources/js/chartist.charts.js"></script>
+
+    <!-- codemirror -->
+    <script src="vendor/codemirror/lib/codemirror.js"></script>
+    <script src="vendor/codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="vendor/codemirror/mode/sparql/sparql.js"></script>
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("sparql"), {
+            mode: "application/sparql-query",
+            matchBrackets: true,
+            lineNumbers: true,
+            viewportMargin: Infinity
+        });
+    </script>
+
+    <!-- highlight -->
+    <script src="vendor/highlight/highlight.pack-9.3.0.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="resources/js/hljs.linenumbering.js"></script>
+
+    <!-- swiper -->
+    <script src="vendor/swiper/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 30,
+            hashnav: true
+        });
+    </script>
+
+    <!-- magnific popup -->
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min-1.1.0.js"></script>
+    <script src="resources/js/magnific-popup.lightbox.js"></script>
+
+    <!-- impress.mod.js -->
+    <script src="vendor/impress/impress.fork.js"></script>
+    <script src="vendor/impress/impress-slidenum.js"></script>
+    <script>
+        var obj = impress();
+        obj.init();
+        initSlideNo(obj);
+    </script>
+
+</body>
+</html>
