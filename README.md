@@ -8,7 +8,7 @@
 ### Anna Neovesky
 
 
-Online unter: https://metacontext.github.io/2017-ws-deckenmalerei/
+Online unter: https://annaneo.github.io/2018-visual-approaches-textcorpora/
 
 Released under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/), 
 
